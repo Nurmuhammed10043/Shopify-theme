@@ -1,0 +1,26 @@
+{% schema %}
+{
+  "name": "Slideshow",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "slide_1",
+      "label": "Slide 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_2",
+      "label": "Slide 2"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="slideshow" style="width: 100%; overflow: hidden;">
+  {% if section.settings.slide_1 != blank %}
+    <img src="{{ section.settings.slide_1 | img_url: 'master' }}" style="width: 100%;" />
+  {% endif %}
+  {% if section.settings.slide_2 != blank %}
+    <img src="{{ section.settings.slide_2 | img_url: 'master' }}" style="width: 100%;" />
+  {% endif %}
+</div>
