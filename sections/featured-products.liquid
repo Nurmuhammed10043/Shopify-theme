@@ -1,0 +1,27 @@
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "featured_collection",
+      "label": "Select Featured Collection"
+    }
+  ]
+}
+{% endschema %}
+
+<div style="padding: 20px;">
+  <h2 style="color: green;">Featured Products</h2>
+  <div class="grid" style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for product in collections[section.settings.featured_collection].products limit: 8 %}
+      <div style="border: 1px solid #ccc; padding: 10px; width: 45%;">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" style="width: 100%;" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
