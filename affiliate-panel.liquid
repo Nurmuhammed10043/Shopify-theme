@@ -1,0 +1,31 @@
+{% schema %}
+{
+  "name": "Affiliate Panel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "affiliate_heading",
+      "label": "Affiliate Heading",
+      "default": "Join Our Affiliate Program"
+    },
+    {
+      "type": "textarea",
+      "id": "affiliate_description",
+      "label": "Affiliate Description",
+      "default": "Earn money by sharing our products with your friends and followers. Sign up today!"
+    },
+    {
+      "type": "url",
+      "id": "signup_link",
+      "label": "Affiliate Signup Link",
+      "default": "#"
+    }
+  ]
+}
+{% endschema %}
+
+<section style="background: #e5f9e7; padding: 30px; border-radius: 10px;">
+  <h2 style="color: green;">{{ section.settings.affiliate_heading }}</h2>
+  <p>{{ section.settings.affiliate_description }}</p>
+  <a href="{{ section.settings.signup_link }}" style="display:inline-block; margin-top:15px; padding:10px 20px; background: red; color: white; text-decoration: none; border-radius: 5px;">Become an Affiliate</a>
+</section>

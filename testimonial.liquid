@@ -1,0 +1,37 @@
+{% schema %}
+{
+  "name": "Testimonial",
+  "settings": [
+    {
+      "type": "text",
+      "id": "testimonial_heading",
+      "label": "Heading",
+      "default": "What Our Customers Say"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_1",
+      "label": "Testimonial 1",
+      "default": "Amazing service! Great quality products!"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_2",
+      "label": "Testimonial 2",
+      "default": "I received my order on time and it was perfect!"
+    }
+  ]
+}
+{% endschema %}
+
+<div style="background-color: #f9f9f9; padding: 30px;">
+  <h2 style="color: red;">{{ section.settings.testimonial_heading }}</h2>
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <blockquote style="border-left: 5px solid green; padding-left: 15px;">
+      "{{ section.settings.testimonial_1 }}"
+    </blockquote>
+    <blockquote style="border-left: 5px solid red; padding-left: 15px;">
+      "{{ section.settings.testimonial_2 }}"
+    </blockquote>
+  </div>
+</div>
